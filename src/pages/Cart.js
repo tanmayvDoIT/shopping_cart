@@ -33,11 +33,18 @@ const Cart = () => {
       <h1>CART ITEMS</h1>
       <div className="card">
         <div className="card-body">
+          <div className="row font-weight-bold mb-2">
+            <div className="col-4">PRODUCT</div>
+            <div className="col-2">QTY</div>
+            <div className="col-4"></div>
+            <div className="col-2">PRICE</div>
+          </div>
           {cartData.map((data) => (
             <div key={data.id} className="py-2">
               <div className="row">
                 <div className="col-4">{data.name}</div>
-                <div className="col-5">
+                <div className="col-2">{`${data.qty} * ${data.price}`}</div>
+                <div className="col-4 text-center">
                   <span>
                     <button
                       className="btn bg-primary"
@@ -55,12 +62,14 @@ const Cart = () => {
                     </button>
                   </span>
                 </div>
-                <div className="col-3">{data.price * data.qty}</div>
+                <div className="col-2">{data.price * data.qty}</div>
               </div>
             </div>
           ))}
           {cartData.length && (
-            <div className="text-right pr-5">TOTAL : {sum}</div>
+            <div className="text-right pr-5 font-weight-bold">
+              TOTAL : {sum}
+            </div>
           )}
         </div>
       </div>
