@@ -1,0 +1,6 @@
+.single-card {
+  transition: all 500ms;
+}
+.single-card:hover {
+  box-shadow: 5px 5px 10px;
+}
